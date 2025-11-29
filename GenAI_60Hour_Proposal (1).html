@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAI Training Proposal - 60 Hours</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .proposal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .duration-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9em;
+            font-weight: 500;
+            margin-top: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .content {
+            padding: 60px;
+        }
+        
+        .recipient-section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e8ecf1;
+        }
+        
+        .recipient-label {
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #7f8c8d;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .recipient-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5em;
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .recipient-title {
+            color: #667eea;
+            font-weight: 500;
+            font-size: 1.05em;
+        }
+        
+        .intro-text {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #4a5568;
+            margin-bottom: 40px;
+            text-align: justify;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin: 40px 0 25px 0;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: inline-block;
+        }
+        
+        .module {
+            background: #f8f9fc;
+            border-left: 4px solid #667eea;
+            padding: 25px 30px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .module:hover {
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+            transform: translateX(5px);
+        }
+        
+        .module-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .module-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 15px;
+            font-size: 1.1em;
+        }
+        
+        .module-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3em;
+            color: #2c3e50;
+            font-weight: 600;
+            flex: 1;
+        }
+        
+        .module-duration {
+            background: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            color: #667eea;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .topics-list {
+            list-style: none;
+            margin-top: 12px;
+        }
+        
+        .topics-list li {
+            padding: 6px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+        
+        .topics-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .highlights-section {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 35px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+        
+        .highlights-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .highlight-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .highlight-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            color: #667eea;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .highlight-label {
+            font-size: 0.9em;
+            color: #4a5568;
+            font-weight: 500;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 60px;
+            text-align: center;
+        }
+        
+        .from-section {
+            margin-bottom: 25px;
+        }
+        
+        .from-label {
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #95a5a6;
+            margin-bottom: 8px;
+        }
+        
+        .from-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .from-company {
+            color: #667eea;
+            font-weight: 500;
+            font-size: 1.1em;
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.9em;
+            color: #bdc3c7;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            .module:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div style="font-family: 'Playfair Display', serif; font-size: 1.8em; font-weight: 600; margin-bottom: 20px; opacity: 0.95; letter-spacing: 1px;">The Skill Shop</div>
+                <h1 class="proposal-title">Generative AI Training Program</h1>
+                <p style="font-size: 1.1em; margin-top: 10px; opacity: 0.95;">From Fundamentals to Interactive Projects</p>
+                <div class="duration-badge">60 Hours | Comprehensive Track</div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="recipient-section">
+                <div class="recipient-label">Respectfully Submitted To</div>
+                <div class="recipient-name">Shri. Kondapalli Srinivas Garu</div>
+                <div class="recipient-title">Hon'ble Minister for MSME, Andhra Pradesh</div>
+            </div>
+            
+            <p class="intro-text">
+                We are pleased to present this comprehensive training proposal designed to equip students and professionals with cutting-edge Generative AI skills. This 60-hour program bridges the gap between theoretical understanding and practical implementation, enabling participants to build real-world AI applications from scratch.
+            </p>
+            
+            <div class="highlights-section">
+                <div class="highlights-title">Program Highlights</div>
+                <div class="highlights-grid">
+                    <div class="highlight-item">
+                        <div class="highlight-number">60</div>
+                        <div class="highlight-label">Hours of Training</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-number">6</div>
+                        <div class="highlight-label">Comprehensive Modules</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-number">100%</div>
+                        <div class="highlight-label">Hands-on Learning</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-number">1</div>
+                        <div class="highlight-label">Capstone Project</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="section-title">Curriculum Modules</h2>
+            
+            <div class="module">
+                <div class="module-header">
+                    <div class="module-number">1</div>
+                    <div class="module-title">Foundations of GenAI</div>
+                    <div class="module-duration">12 Hours</div>
+                </div>
+                <ul class="topics-list">
+                    <li>History and evolution of AI to Generative AI</li>
+                    <li>Understanding ML, Deep Learning, and GenAI architectures</li>
+                    <li>Neural networks, transformers, and attention mechanisms</li>
+                    <li>Major GenAI models: GPT, BERT, Claude, Gemini, LLaMA</li>
+                    <li>Ethics, bias, and responsible AI usage</li>
+                    <li>Development environment setup and API configuration</li>
+                </ul>
+            </div>
+            
+            <div class="module">
+                <div class="module-header">
+                    <div class="module-number">2</div>
+                    <div class="module-title">Prompt Engineering Mastery</div>
+                    <div class="module-duration">10 Hours</div>
+                </div>
+                <ul class="topics-list">
+                    <li>Basic and advanced prompt structures</li>
+                    <li>Chain-of-thought reasoning and few-shot learning</li>
+                    <li>Role-playing techniques and prompt patterns</li>
+                    <li>Debugging and optimization strategies</li>
+                    <li>Project: Building a comprehensive prompt library</li>
+                </ul>
+            </div>
+            
+            <div class="module">
+                <div class="module-header">
+                    <div class="module-number">3</div>
+                    <div class="module-title">Working with LLM APIs</div>
+                    <div class="module-duration">12 Hours</div>
+                </div>
+                <ul class="topics-list">
+                    <li>REST APIs fundamentals and authentication</li>
+                    <li>OpenAI API: Chat completions, embeddings, function calling</li>
+                    <li>Anthropic Claude API: Messages and streaming responses</li>
+                    <li>Google Gemini API and multi-provider integration</li>
+                    <li>Error handling, rate limits, and cost optimization</li>
+                    <li>Project: Multi-provider intelligent chatbot</li>
+                </ul>
+            </div>
+            
+            <div class="module">
+                <div class="module-header">
+                    <div class="module-number">4</div>
+                    <div class="module-title">RAG Systems & Vector Databases</div>
+                    <div class="module-duration">10 Hours</div>
+                </div>
+                <ul class="topics-list">
+                    <li>Understanding embeddings and semantic search</li>
+                    <li>Vector databases: Pinecone, Chroma, Qdrant</li>
+                    <li>Building RAG pipelines: Document loading, chunking, retrieval</li>
+                    <li>Advanced RAG: Hybrid search, reranking, metadata filtering</li>
+                    <li>Project: Intelligent document Q&A system</li>
+                </ul>
+            </div>
+            
+            <div class="module">
+                <div class="module-header">
+                    <div class="module-number">5</div>
+                    <div class="module-title">LangChain & AI Frameworks</div>
+                    <div class="module-duration">8 Hours</div>
+                </div>
+                <ul class="topics-list">
+                    <li>LangChain architecture and components</li>
+                    <li>Building chains, agents, and memory management</li>
+                    <li>Tool integration and custom components</li>
+                    <li>Alternative frameworks: LlamaIndex, Haystack</li>
+                    <li>Project: AI agent with tool-calling capabilities</li>
+                </ul>
+            </div>
+            
+            <div class="module">
+                <div class="module-header">
+                    <div class="module-number">6</div>
+                    <div class="module-title">Image & Multimodal AI</div>
+                    <div class="module-duration">8 Hours</div>
+                </div>
+                <ul class="topics-list">
+                    <li>Text-to-image generation: DALL-E, Midjourney, Stable Diffusion</li>
+                    <li>Image-to-text: Vision models and OCR</li>
+                    <li>Audio generation and speech-to-text processing</li>
+                    <li>Multimodal models: GPT-4V, Claude with vision</li>
+                    <li>Project: Complete multimodal AI application</li>
+                </ul>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 10px; margin-top: 40px; text-align: center;">
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8em; margin-bottom: 15px;">Capstone Project</h3>
+                <p style="font-size: 1.05em; line-height: 1.7; opacity: 0.95;">
+                    <strong>10 Hours</strong> dedicated to building a complete, production-ready interactive GenAI application. Students will integrate RAG systems, API calls, user interfaces, and deployment strategies to create industry-standard projects including AI tutors, content generators, research assistants, or creative writing tools.
+                </p>
+            </div>
+            
+            <div style="margin-top: 50px; padding: 30px; background: #f8f9fc; border-radius: 10px;">
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5em; color: #2c3e50; margin-bottom: 20px;">Program Outcomes</h3>
+                <ul class="topics-list" style="margin-top: 0;">
+                    <li>Build production-ready GenAI applications from scratch</li>
+                    <li>Master prompt engineering for optimal AI interactions</li>
+                    <li>Implement RAG systems with vector databases</li>
+                    <li>Integrate multiple LLM APIs and frameworks</li>
+                    <li>Create multimodal AI solutions</li>
+                    <li>Deploy and maintain AI applications professionally</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="from-section">
+                <div class="from-label">Submitted By</div>
+                <div class="from-name">Ram Kaushik</div>
+                <div class="from-company">The Skill Shop</div>
+            </div>
+            <div class="contact-info">
+                Empowering the next generation with industry-aligned AI skills
+            </div>
+        </div>
+    </div>
+</body>
+</html>
